@@ -43,7 +43,7 @@
     <!-- js -->
     <script src="./js/app.js"></script>
   </head>
-  <body>
+  <body onload="carregaListaDespesas()">
     <header>
       <nav class="nav navbar-expand-lg navbar-dark mb-5 navbar-backgound">
         <div class="container">
@@ -79,7 +79,7 @@
       <div class="row">
         <div class="card">
           <div class="col mb-5">
-            <h1>Registro de nova despesa</h1>
+            <h1>Consulta de despesas</h1>
             <div class="row mb-2 coluna">
               <div class="col-md-2 ca">
                 <select class="form-control" id="ano">
@@ -113,7 +113,7 @@
       
               <div class="col-md-6 ca">
                 <select class="form-control" id="tipo">
-                  <option>Tipo</option>
+                  <option value="">Tipo</option>
                   <option value="1">Alimentação</option>
                   <option value="2">Educação</option>
                   <option value="3">Lazer</option>
@@ -133,8 +133,8 @@
               </div>
       
               <div class="col-md-2 d-flex justify-content-end ca">
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-plus"></i>
+                <button type="button" class="btn btn-primary" onclick="pesquisarDespesa()">
+                  <i class="fa-regular fa-magnifying-glass"></i>
                 </button>
               </div>
           </div>
@@ -145,14 +145,16 @@
               <table class="table" >
                 <thead>
                   <tr>
-                    <th>Data</th>
-                    <th>Tipo</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
+                    <th>Data:</th>
+                    <th>Tipo:</th>
+                    <th>Descrição:</th>
+                    <th>Valor R$:</th>
                     <th></th>
                   </tr>
                 </thead>
-    
+                
+                 <tbody id="listaDespesas">
+                 </tbody> 
                 <tbody>
                 </tbody>
               </table>
