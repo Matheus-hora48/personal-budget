@@ -9,6 +9,8 @@ class Despesa {
   }
 }
 
+let bd = new Bd()
+
 function cadastrarDespesa() {
   let ano = document.getElementById('ano')
   let mes = document.getElementById('mes')
@@ -26,5 +28,12 @@ function cadastrarDespesa() {
     valor.value
   )
 
-  console.log(despesa)
+  if (despesa.validarDados()) {
+    bd.gravar(despesa)
+    //dialog de sucesso
+    $('#sucessoGravacao').modal('show')
+  } else {
+    //dialog de sucesso
+    $('#erroGravacao').modal('show')
+  }
 }
