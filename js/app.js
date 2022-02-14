@@ -7,6 +7,40 @@ class Despesa {
     this.descricao = descricao
     this.valor = valor
   }
+
+  validarDados() {
+    for (let i in this) {
+      if (this[i] == undefined || this[i] == '' || this[i] == null) {
+        return false
+      }
+    }
+    return true
+  }
+}
+
+class Bd {
+  constructor() {
+    let id = localStorage.getItem('id')
+
+    if (id === null) {
+      localStorage.setItem('id', 0)
+    }
+  }
+
+  //geItem = recuperar um dado dentro do storage
+  getProximoId() {
+    let proximoId = localStorage.getItem('id')
+    return parseInt(proximoId) + 1
+  }
+
+  //setItem = definir um dado dentro do storage
+  gravar(d) {
+    let id = this.getProximoId()
+
+    localStorage.setItem(id, JSON.stringify(d))
+
+    localStorage.setItem('id', id)
+  }
 }
 
 let bd = new Bd()
