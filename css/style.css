@@ -173,6 +173,14 @@ h1 {
 }
 
 @media (max-width: 575px) {
+  .ca button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .card { 
+  }
   .ca {
     padding: 8px;
     border-radius: 30px;
@@ -181,4 +189,9 @@ h1 {
 
 .table {
   margin-top: 40px;
+}
+
+label {
+  margin-top: 10px;
+  margin-right: 20px;
 }
